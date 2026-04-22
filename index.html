@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tex Tel — Bem-vindo</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #0a0a0a;
+      color: #ffffff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* HEADER */
+    header {
+      background: #ff6600;
+      padding: 18px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 4px 20px rgba(255, 102, 0, 0.5);
+    }
+
+    header .logo {
+      font-size: 2rem;
+      font-weight: 900;
+      letter-spacing: 3px;
+      color: #ffffff;
+      text-transform: uppercase;
+    }
+
+    header .logo span {
+      color: #ffe600;
+    }
+
+    header nav a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 28px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    header nav a:hover {
+      color: #ffe600;
+    }
+
+    /* HERO */
+    .hero {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 80px 20px;
+      background: linear-gradient(135deg, #0a0a0a 0%, #1a0a00 50%, #0a0a0a 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -200px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 700px;
+      height: 700px;
+      background: radial-gradient(circle, rgba(255,102,0,0.18) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero .badge {
+      display: inline-block;
+      background: #ffe600;
+      color: #0a0a0a;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 6px 20px;
+      border-radius: 999px;
+      margin-bottom: 28px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.4rem, 6vw, 4.5rem);
+      font-weight: 900;
+      line-height: 1.1;
+      margin-bottom: 24px;
+      letter-spacing: -1px;
+    }
+
+    .hero h1 .highlight {
+      color: #ff6600;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: #cccccc;
+      max-width: 560px;
+      line-height: 1.7;
+      margin-bottom: 44px;
+    }
+
+    .hero .cta-group {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .btn-primary {
+      background: #ff6600;
+      color: #fff;
+      padding: 16px 40px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: background 0.2s, transform 0.15s;
+      box-shadow: 0 4px 24px rgba(255,102,0,0.4);
+    }
+
+    .btn-primary:hover {
+      background: #e05500;
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: #ffe600;
+      padding: 16px 40px;
+      border: 2px solid #ffe600;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255,230,0,0.12);
+      transform: translateY(-2px);
+    }
+
+    /* CARDS */
+    .cards {
+      display: flex;
+      gap: 24px;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 60px 40px;
+      background: #111111;
+    }
+
+    .card {
+      background: #1a1a1a;
+      border: 1px solid #2a2a2a;
+      border-radius: 12px;
+      padding: 36px 28px;
+      max-width: 280px;
+      flex: 1 1 220px;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .card:hover {
+      border-color: #ff6600;
+      transform: translateY(-4px);
+    }
+
+    .card .icon {
+      font-size: 2.4rem;
+      margin-bottom: 16px;
+    }
+
+    .card h3 {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: #ff6600;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .card p {
+      font-size: 0.92rem;
+      color: #aaaaaa;
+      line-height: 1.6;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #ff6600;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #fff;
+      letter-spacing: 1px;
+    }
+
+    footer span {
+      color: #ffe600;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">Tex<span>Tel</span></div>
+    <nav>
+      <a href="#">Início</a>
+      <a href="#">Serviços</a>
+      <a href="#">Contato</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="badge">Comunicação de Alta Performance</div>
+    <h1>Bem-vindo à<br /><span class="highlight">Tex Tel</span></h1>
+    <p>Soluções completas em telecomunicações para conectar pessoas, empresas e o futuro.</p>
+    <div class="cta-group">
+      <a href="#" class="btn-primary">Conheça nossos planos</a>
+      <a href="#" class="btn-secondary">Fale conosco</a>
+    </div>
+  </section>
+
+  <section class="cards">
+    <div class="card">
+      <div class="icon">📡</div>
+      <h3>Conectividade</h3>
+      <p>Infraestrutura robusta para garantir conexão estável e de alta velocidade onde você estiver.</p>
+    </div>
+    <div class="card">
+      <div class="icon">🔒</div>
+      <h3>Segurança</h3>
+      <p>Comunicações protegidas com tecnologia de ponta para sua tranquilidade e a de seu negócio.</p>
+    </div>
+    <div class="card">
+      <div class="icon">⚡</div>
+      <h3>Velocidade</h3>
+      <p>Alta performance em cada transmissão — sem interrupções, sem limites, sem desculpas.</p>
+    </div>
+    <div class="card">
+      <div class="icon">🤝</div>
+      <h3>Suporte 24h</h3>
+      <p>Nossa equipe especializada está sempre disponível para garantir o melhor atendimento.</p>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2026 <span>Tex Tel</span> — Todos os direitos reservados.
+  </footer>
+
+</body>
+</html>
